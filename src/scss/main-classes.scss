@@ -1,4 +1,8 @@
 .container {
   margin: 0 70px;
   max-width: 1780px;
+
+  &--full-padding{
+    margin: 70px;
+  }
 }

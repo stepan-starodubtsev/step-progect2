@@ -1,5 +1,5 @@
 @import "../main-classes";
-@im
+@import "../mixins/mixins";
 
 .main-photo {
   width: 1920px;
@@ -36,9 +36,9 @@
     align-self: stretch;
 
     background-color: #252525;
-    @include flex(column, nowrap, normal, end);
+    @include flex(column, nowrap, space-between, end);
     gap: 30px;
-    padding: 35px 70px 35px 0;
+    padding: 60px 70px 60px 0;
 
     &__p {
       color: #FFF;

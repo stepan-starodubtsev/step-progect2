@@ -1,11 +1,10 @@
-// * Це головний sass/css файл проекту
-// * імпортуйте сюди всі інші ваші файли sass/css
 @import 'reset';
 @import 'fonts';
 @import 'mixins/mixins';
 @import 'main-classes';
 @import 'main-blocks/header';
 @import 'main-blocks/about-me';
+@import 'main-blocks/logo-cards';
 
 :root {
   --main-font: Gilroy;
