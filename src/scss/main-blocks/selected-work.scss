@@ -9,8 +9,9 @@
 
 .cards-wrapper {
   @include flex(row, wrap, normal, normal);
-  row-gap: 40px;
-  column-gap: 70px;
+  row-gap: 70px;
+  column-gap: 40px;
+
 
   &--reverse{
     flex-wrap: wrap-reverse;
@@ -19,8 +20,8 @@
 
 .card-work {
   @include flex(column, wrap, normal, normal);
-  min-width: 413px;
-  min-height: 413px;
+  width: 433px;
+  height: 433px;
 
   &__header {
     padding-bottom: 30px;
@@ -66,7 +67,7 @@
 
   &__img{
     background-size: contain;
-    width: 413px;
-    height: 413px;
+    width: inherit;
+    height: inherit;
   }
 }
