@@ -26,8 +26,8 @@
   "browserslist": [
     "last 3 version"
   ],
-  "type": "module",
   "dependencies": {
     "gulp-minify": "^3.1.0"
-  }
+  },
+  "type": "module"
 }
