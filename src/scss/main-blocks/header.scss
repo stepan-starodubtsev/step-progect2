@@ -1,0 +1,150 @@
+@import '../mixins/mixins';
+
+.header {
+  padding: 40px 0;
+
+  @include flex(column, nowrap, normal, normal);
+  gap: 30px;
+
+  &__wrapper {
+    @include flex(row, nowrap, space-between, center);
+
+    &__button {
+      border: none;
+      outline: none;
+
+      color: #252525;
+      text-align: center;
+      font-family: var(--semiBold-font), serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  & h1 {
+    color: #252525;
+    text-align: center;
+    font-family: var(--semiBold-font), sans-serif;
+    font-size: 125px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    & span {
+      color: #252525;
+      font-family: var(--main-font), serif;
+      font-size: 125px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      text-transform: capitalize;
+    }
+  }
+
+  &__scroll-down {
+    text-align: center;
+  }
+}
+
+.logo {
+  @include flex(row, nowrap, normal, center);
+  gap: 10px;
+
+  &__text {
+    color: #000;
+    text-align: center;
+    font-family: var(--main-font), serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.7px;
+
+    &--bold {
+      color: #000;
+      font-family: var(--medium-font), serif;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.7px;
+      text-transform: uppercase;
+    }
+
+    &--rights {
+      color: #000;
+      text-align: center;
+      font-family: var(--main-font), serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+    }
+  }
+}
+
+.main-photo {
+  width: 1920px;
+  height: 956px;
+}
+
+.about-me {
+  @include flex(row, wrap, normal, normal);
+  padding: 70px 0;
+
+  &__p {
+    margin: 0 70px;
+    flex-basis: 925px;
+
+    color: #252525;
+    font-family: var(--main-font), serif;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    & span {
+      color: #252525;
+      font-family: var(--main-font), serif;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+    }
+  }
+
+  .media-wrapper {
+    flex-grow: 1;
+    align-self: stretch;
+
+    background-color: #252525;
+    @include flex(column, nowrap, normal, end);
+    gap: 30px;
+    padding: 35px 70px 35px 0;
+
+    &__p {
+      color: #FFF;
+      text-align: right;
+      font-family: var(--medium-font), serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.media-icons {
+  width: 100%;
+
+  @include flex(row, nowrap, end, center);
+  gap: 20px;
+}

@@ -1,87 +1,72 @@
-// 'use strict';
-
 import gulp from "gulp";
-import concat from "gulp-concat";
-import minify from "gulp-minify";
-import cleanCSS from "gulp-clean-css";
-import clean from "gulp-clean";
-import browserSync from "browser-sync";
-import imagemin from 'gulp-imagemin';
-import dartSass from "sass";
-import gulpSass from "gulp-sass";
 
+import imagemin from "gulp-imagemin";
+import autoprefixer from "gulp-autoprefixer";
+import csso from "gulp-csso";
+import clean from "gulp-clean";
+import * as dartSass from 'sass';
+import gulpSass from "gulp-sass"
 const sass = gulpSass(dartSass);
 
-const html = () => {
-  return gulp.src("./src/*.html").pipe(gulp.dest("./dist"));
+const { src, dest, watch, series, parallel } = gulp;
+
+import bsc from "browser-sync";
+const browserSync = bsc.create();
+
+const htmlTaskHandler = () => {
+  return src("./src/*.html").pipe(dest("./dist"));
 };
 
-const css = () => {
-  return gulp
-    .src("./src/scss/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(concat("main.css"))
-    .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("./dist/css"));
+const cssTaskHandler = () => {
+  return src("./src/scss/main.scss")
+      .pipe(sass().on("error", sass.logError))
+      .pipe(autoprefixer())
+      .pipe(csso())
+      .pipe(dest("./dist/css"))
+      .pipe(browserSync.stream());
 };
 
-const js = () => {
-  return gulp
-    .src("./src/scripts/**/*.js")
-    .pipe(concat("script.js"))
-    .pipe(
-      minify({
-        ext: {
-          src: ".js",
-          min: ".min.js",
-        },
-      })
-    )
-    .pipe(gulp.dest("./dist/scripts"));
+const imagesTaskHandler = () => {
+  return src("./src/images/**/*.*")
+      .pipe(imagemin())
+      .pipe(dest("./dist/images"));
 };
 
-const image = () => {
-    return gulp.src("./src/images/**/*.*")
-        .pipe(imagemin())
-        .pipe(gulp.dest("./dist/images"));
+const cleanDistTaskHandler = () => {
+  return src("./dist", { read: false, allowEmpty: true }).pipe(
+      clean({ force: true })
+  );
 };
 
-const cleanDist = () => {
-  return gulp.src('./dist', { allowEmpty: true })
-      .pipe(clean());
-};
-
-const server = () => {
+const browserSyncTaskHandler = () => {
   browserSync.init({
     server: {
       baseDir: "./dist",
-    },
+    }
   });
+
+  watch("./src/scss/**/*.scss").on(
+      "all",
+      series(cssTaskHandler, browserSync.reload)
+  );
+  watch("./src/*.html").on(
+      "change",
+      series(htmlTaskHandler, browserSync.reload)
+  );
+  watch("./src/images/**/*").on(
+      "all",
+      series(imagesTaskHandler, browserSync.reload)
+  );
 };
 
-const watcher = () => {
-  gulp.watch("./src/*.html", html).on("all", browserSync.reload);
-  gulp
-    .watch("./src/css/**/*.{scss,sass,css}", css)
-    .on("all", browserSync.reload);
-  gulp.watch("./src/scripts/**/*.js", js).on("all", browserSync.reload);
-  gulp.watch("./src/images/**/*.*", image).on("all", browserSync.reload);
-};
+export const cleaning = cleanDistTaskHandler;
+export const html = htmlTaskHandler;
+export const css = cssTaskHandler;
+export const images = imagesTaskHandler;
 
-gulp.task("html", html);
-gulp.task("style", css);
-gulp.task("script", js);
-gulp.task("cleanDist", cleanDist);
-gulp.task("browser-sync", server);
-gulp.task("image", image);
-
-gulp.task("build", gulp.series(cleanDist, gulp.parallel(html, css, js, image)));
-
-gulp.task(
-  "dev",
-  gulp.series(
-      // cleanDist,
-    gulp.parallel(html, css, js, image),
-    gulp.parallel(server, watcher)
-  )
+export const build = series(
+    cleanDistTaskHandler,
+    parallel(htmlTaskHandler, cssTaskHandler, imagesTaskHandler)
 );
+
+export const dev = series(build, browserSyncTaskHandler);
