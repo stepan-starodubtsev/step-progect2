@@ -8,23 +8,16 @@
 
   &__wrapper {
     @include flex(row, nowrap, space-between, center);
+  }
 
-    &__button {
-      border: none;
-      outline: none;
-
-      color: #252525;
-      text-align: center;
-      font-family: var(--semiBold-font), serif;
-      font-size: 25px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
+  .header-button {
+    color: #252525;
+    text-align: center;
+    font-family: var(--semiBold-font), serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   & h1 {

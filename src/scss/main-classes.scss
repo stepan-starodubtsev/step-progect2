@@ -2,7 +2,41 @@
   margin: 0 70px;
   max-width: 1780px;
 
-  &--full-padding{
+  &--full-padding {
     margin: 70px;
   }
+}
+
+.button {
+  border: none;
+  outline: none;
+
+  &--black {
+    color: #FFF;
+    background: #252525;
+  }
+
+  &--white {
+    background: #FFF;
+  }
+
+  &--border-rounded {
+    border-radius: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h2 {
+  color: #252525;
+  text-align: center;
+  font-family: var(--main-font), serif;
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 8.48px;
+  text-transform: uppercase;
 }
