@@ -1,2 +1,21 @@
-// * Це головний sass/scss файл проекту
-// * імпортуйте сюди всі інші ваші файли sass/scss
+// * Це головний sass/css файл проекту
+// * імпортуйте сюди всі інші ваші файли sass/css
+@import 'reset';
+@import 'fonts';
+@import 'mixins/mixins';
+@import 'main-classes';
+@import 'main-blocks/header';
+
+:root {
+  --main-font: Gilroy;
+  --medium-font: Gilroy-Medium;
+  --semiBold-font: Gilroy-SemiBold;
+  --bold-font: Gilroy-Bold;
+  --light-font: Gilroy-Light;
+  --regular-font: Gilroy-Regular;
+  --p-font: Inter;
+}
+
+body {
+  background-color: #F5F3EA;
+}
