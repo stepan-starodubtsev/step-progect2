@@ -4,6 +4,8 @@
   @include flex(row, wrap, space-between, center);
   gap: 20px;
 
+  padding: 70px 0;
+
   &__logo-card {
     padding: 15px 20px;
     border-radius: 50px;

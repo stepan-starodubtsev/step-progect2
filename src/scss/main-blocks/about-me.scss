@@ -1,6 +1,10 @@
 @import "../main-classes";
 @import "../mixins/mixins";
 
+.about-me-photo{
+  border-bottom: none;
+}
+
 .main-photo {
   width: 1920px;
   height: 956px;
