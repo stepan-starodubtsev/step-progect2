@@ -1,7 +1,7 @@
 @import "../mixins/mixins";
 
 .service {
-  @include flex(row, wrap, normal, center);
+  @include flex(row, wrap, normal, stretch);
   //width: 100%;
 
   //@media screen and (max-width:1200px) and (min-width:768px) {
@@ -14,7 +14,6 @@
 
   &__image {
     width: 46%;
-    height: 1137px;
     background-image: url("../../images/service-img.png");
     background-size: cover;
 
