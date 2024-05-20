@@ -1,0 +1,79 @@
+@import "mixins/mixins";
+
+body {
+  background-color: #F5F3EA;
+}
+
+.container {
+  padding-left: 70px;
+  padding-right: 70px;
+  max-width: 1780px;
+}
+
+.button {
+  border: none;
+  outline: none;
+
+  &--black {
+    color: #FFF;
+    background: #252525;
+  }
+
+  &--white {
+    background: #FFF;
+  }
+
+  &--border-rounded {
+    border-radius: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cards-wrapper {
+  @include flex(row, wrap, normal, normal);
+
+  &--reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+h2 {
+  color: #252525;
+  text-align: center;
+  font-family: var(--main-font), serif;
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 8.48px;
+  text-transform: uppercase;
+}
+
+.media-icons {
+
+  &__icon {
+
+    &__size-m {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+
+    &__size-l {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.fill-white {
+  fill: white;
+}
+
+section {
+  border-bottom: 1px solid black;
+}
