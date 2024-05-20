@@ -8,13 +8,11 @@
 }
 
 .cards-wrapper {
-  @include flex(row, wrap, normal, normal);
-  row-gap: 70px;
-  column-gap: 40px;
 
-
-  &--reverse{
-    flex-wrap: wrap-reverse;
+  &--work-wrapper {
+    //padding-bottom: 70px;
+    row-gap: 70px;
+    column-gap: 40px;
   }
 }
 
@@ -48,7 +46,7 @@
   }
 
   &__button {
-    @include  flex(row, nowrap, center, center);
+    @include flex(row, nowrap, center, center);
     padding: 15px 30px;
     font-family: var(--medium-font), serif;
     font-size: 18px;
@@ -65,9 +63,15 @@
     }
   }
 
-  &__img{
+  &__img {
     background-size: contain;
     width: inherit;
     height: inherit;
   }
+}
+
+.all-work-button{
+  margin-top: 70px;
+  align-self: center;
+  padding: 15px 60px;
 }

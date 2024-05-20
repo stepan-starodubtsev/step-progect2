@@ -1,3 +1,5 @@
+@import "mixins/mixins";
+
 .container {
   margin: 0 70px;
   max-width: 1780px;
@@ -29,6 +31,14 @@
   }
 }
 
+.cards-wrapper {
+  @include flex(row, wrap, normal, normal);
+
+  &--reverse{
+    flex-wrap: wrap-reverse;
+  }
+}
+
 h2 {
   color: #252525;
   text-align: center;
@@ -39,4 +49,26 @@ h2 {
   line-height: normal;
   letter-spacing: 8.48px;
   text-transform: uppercase;
+}
+
+.media-icons {
+
+  &__icon {
+
+    &__size-m{
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+
+    &__size-l{
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.fill-white{
+  fill: white;
 }
