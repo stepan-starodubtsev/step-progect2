@@ -1,0 +1,101 @@
+@import '../mixins/mixins';
+
+.our-team {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+}
+
+.card-member {
+  @include flex(column, nowrap, normal, normal);
+
+  padding: 20px 0;
+  gap: 15px;
+
+  &__header {
+    @include flex(column, nowrap, normal, start);
+    gap: 5px;
+  }
+
+  &__body {
+    & img {
+      background-size: contain;
+      width: 314px;
+      height: auto;
+    }
+  }
+
+  &__footer {
+
+
+  }
+}
+
+.member-name {
+  color: #333;
+  font-family: var(--main-font), serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.member-position {
+  color: #333;
+  font-family: var(--medium-font), serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-team {
+  @include flex(column, nowrap, center, start);
+  gap: 15px;
+
+  grid-column-start: 3;
+  grid-column-end: 5;
+
+  &__p {
+    color: #333;
+    font-family: var(--regular-font), serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__slogan {
+    color: #333;
+    font-family: var(--bold-font), serif;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    padding: 10px 30px;
+
+    color: #FFF;
+    font-family: var(--medium-font), serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+
+    & img{
+      margin-left: 10px;
+    }
+  }
+}
+

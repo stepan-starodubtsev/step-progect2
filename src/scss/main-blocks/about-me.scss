@@ -1,0 +1,65 @@
+@import "../main-classes";
+@import "../mixins/mixins";
+
+.about-me-photo{
+  border-bottom: none;
+}
+
+.main-photo {
+  width: 1920px;
+  height: 956px;
+}
+
+.about-me {
+  @include flex(row, wrap, normal, normal);
+  padding: 70px 0;
+
+  &__p {
+    margin: 0 70px;
+    flex-basis: 925px;
+
+    color: #252525;
+    font-family: var(--main-font), serif;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    & span {
+      color: #252525;
+      font-family: var(--main-font), serif;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+    }
+  }
+
+  .media-wrapper {
+    flex-grow: 1;
+    align-self: stretch;
+
+    background-color: #252525;
+    @include flex(column, nowrap, space-between, end);
+    gap: 30px;
+    padding: 60px 70px 60px 0;
+
+    &__p {
+      color: #FFF;
+      text-align: right;
+      font-family: var(--medium-font), serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.media-icons {
+  width: 100%;
+
+  @include flex(row, nowrap, end, center);
+  gap: 20px;
+}

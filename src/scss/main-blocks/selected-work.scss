@@ -1,0 +1,77 @@
+@import '../mixins/mixins';
+
+.selected-work {
+  @include flex(column, nowrap, normal, normal);
+  gap: 50px;
+
+  padding-bottom: 100px;
+}
+
+.cards-wrapper {
+
+  &--work-wrapper {
+    //padding-bottom: 70px;
+    row-gap: 70px;
+    column-gap: 40px;
+  }
+}
+
+.card-work {
+  @include flex(column, wrap, normal, normal);
+  width: 433px;
+  height: 433px;
+
+  &__header {
+    padding-bottom: 30px;
+
+    & h3 {
+      color: #000;
+      font-family: var(--bold-font), serif;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 44px; /* 110% */
+      text-transform: uppercase;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    @include flex(row, wrap, start, baseline);
+    gap: 30px;
+  }
+
+  &__footer {
+    align-self: end;
+  }
+
+  &__button {
+    @include flex(row, nowrap, center, center);
+    padding: 15px 30px;
+    font-family: var(--medium-font), serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+
+    & span {
+      margin: 0 auto;
+      padding-left: 10px;
+      width: 13.333px;
+      height: 21.412px;
+    }
+  }
+
+  &__img {
+    background-size: contain;
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.all-work-button{
+  margin-top: 70px;
+  align-self: center;
+  padding: 15px 60px;
+}

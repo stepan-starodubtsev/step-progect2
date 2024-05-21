@@ -1,30 +1,26 @@
 @import '../mixins/mixins';
 
 .header {
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   @include flex(column, nowrap, normal, normal);
   gap: 30px;
 
   &__wrapper {
     @include flex(row, nowrap, space-between, center);
+  }
 
-    &__button {
-      border: none;
-      outline: none;
+  .header-button {
+    background-color: inherit;
 
-      color: #252525;
-      text-align: center;
-      font-family: var(--semiBold-font), serif;
-      font-size: 25px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
+    color: #252525;
+    text-align: center;
+    font-family: var(--semiBold-font), serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   & h1 {
@@ -88,63 +84,4 @@
       line-height: normal;
     }
   }
-}
-
-.main-photo {
-  width: 1920px;
-  height: 956px;
-}
-
-.about-me {
-  @include flex(row, wrap, normal, normal);
-  padding: 70px 0;
-
-  &__p {
-    margin: 0 70px;
-    flex-basis: 925px;
-
-    color: #252525;
-    font-family: var(--main-font), serif;
-    font-size: 52px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-
-    & span {
-      color: #252525;
-      font-family: var(--main-font), serif;
-      font-size: 52px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: normal;
-    }
-  }
-
-  .media-wrapper {
-    flex-grow: 1;
-    align-self: stretch;
-
-    background-color: #252525;
-    @include flex(column, nowrap, normal, end);
-    gap: 30px;
-    padding: 35px 70px 35px 0;
-
-    &__p {
-      color: #FFF;
-      text-align: right;
-      font-family: var(--medium-font), serif;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 32px;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.media-icons {
-  width: 100%;
-
-  @include flex(row, nowrap, end, center);
-  gap: 20px;
 }
