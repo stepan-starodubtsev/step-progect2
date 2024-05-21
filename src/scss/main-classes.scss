@@ -17,10 +17,22 @@ body {
   &--black {
     color: #FFF;
     background: #252525;
+
+    &:hover{
+      color: #252525;
+      background: #FFF;
+      transition: 0.5s;
+    }
   }
 
   &--white {
     background: #FFF;
+
+    &:hover{
+      color: #FFF;
+      background: #252525;
+      transition: 0.5s;
+    }
   }
 
   &--border-rounded {
