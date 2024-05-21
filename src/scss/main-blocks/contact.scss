@@ -1,9 +1,11 @@
+@import "../mixins/mixins";
+
 .contact {
   width: 100%;
   max-height: 632px;
-  display: flex;
-  flex-direction: row;
+  padding: 100px 0;
 
+  @include flex(row, nowrap, start, normal);
 
   @media  screen and (max-width:1200px) and (min-width:768px) {
     max-width: 931px;
@@ -21,9 +23,9 @@
     justify-content: center;
   }
 
-  .contact__label {
+  &__label {
     max-width: 800px;
-    font-family: Gilroy;
+    font-family: var(--main-font);
     font-size: 155px;
     font-weight: 300;
     line-height: 178.71px;
@@ -37,10 +39,7 @@
       font-size: 150px;
       line-height: 172.95px;
       text-align: center;
-      margin-bottom: 40px;
-      margin-top: 15px;
-      margin-left: 0;
-      margin-right: 0;
+      margin: 15px 0 40px;
     }
 
     @media screen and (max-width:767px) and (min-width:320px) {
@@ -55,12 +54,11 @@
 
   }
 
-  .contact__text-wrapper {
+  &__text-wrapper {
     max-width: 870px;
     height: 432px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
+    @include flex(column, nowrap, center, start);
     margin-bottom: 100px;
 
     @media screen and (max-width:1200px) and (min-width:768px) {
@@ -76,8 +74,8 @@
       height: 469px;
     }
 
-    .contact__text-wrapper-label {
-      font-family: Gilroy-Bold;
+    &__label {
+      font-family: var(--bold-font), serif;
       font-size: 64px;
       line-height: 75px;
       text-align: left;
@@ -98,8 +96,8 @@
 
     }
 
-    .contact__paragraph {
-      font-family: Gilroy-Medium;
+    &__paragraph {
+      font-family: var(--medium-font);
       font-size: 34px;
       line-height: 39.84px;
       text-align: left;
@@ -116,38 +114,6 @@
         max-width: 350px;
         text-align: center;
         margin: 0;
-      }
-    }
-
-    .contact__link {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      max-width: 195px;
-      max-height: 53px;
-      background-color: black;
-      border-radius: 50px;
-      padding: 10px 30px 10px 30px;
-      gap: 10px;
-      text-decoration: none;
-      font-family: Gilroy-Medium;
-      font-size: 18px;
-      line-height: 21.09px;
-      text-align: left;
-      color: white;
-      text-decoration: none;
-
-      @media screen and (max-width:1200px) and (min-width:768px) {
-        margin-bottom: 50px;
-        text-align: center;
-      }
-
-      @media screen and (max-width:767px) and (min-width:320px) {
-        font-size: 18px;
-        max-width: none;
-        padding: 0;
-        justify-content: center;
-        width: 100%;
       }
     }
   }
