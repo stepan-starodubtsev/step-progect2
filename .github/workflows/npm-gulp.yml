@@ -27,3 +27,8 @@ jobs:
         npm i gulp@4.0.2 -D
         npm install --save-dev
         gulp dev
+
+    - name: Post use Node.js cleanup
+      if: always()
+      run: |
+        echo "Cleaning up Node.js"
