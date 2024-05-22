@@ -4,3 +4,21 @@
   justify-content: $j-content;
   align-items: $a-items;
 }
+
+$breakpoints: (
+        'small': 320px,
+        'medium': 768px,
+        'large': 1200px,
+);
+
+// Mixin for media queries
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be found for `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

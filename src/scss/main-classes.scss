@@ -1,5 +1,17 @@
 @import "mixins/mixins";
 
+html {
+  font-size: 10px;
+
+  @include respond-to('medium') {
+    font-size: 8px;
+  }
+
+  @include respond-to('small') {
+    font-size: 5px;
+  }
+}
+
 body {
   background-color: #F5F3EA;
 }
@@ -7,7 +19,16 @@ body {
 .container {
   padding-left: 70px;
   padding-right: 70px;
-  max-width: 1780px;
+
+  @include respond-to('small') {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include respond-to('small') {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .button {
@@ -16,10 +37,10 @@ body {
 
   &--black {
     color: #FFF;
-    background: #252525;
+    background: var(--black);
 
-    &:hover{
-      color: #252525;
+    &:hover {
+      color: var(--black);
       background: #FFF;
       transition: 0.5s;
     }
@@ -28,9 +49,9 @@ body {
   &--white {
     background: #FFF;
 
-    &:hover{
+    &:hover {
       color: #FFF;
-      background: #252525;
+      background: var(--black);
       transition: 0.5s;
     }
   }
@@ -53,7 +74,7 @@ body {
 }
 
 h2 {
-  color: #252525;
+  color: var(--black);
   text-align: center;
   font-family: var(--main-font), serif;
   font-size: 150px;

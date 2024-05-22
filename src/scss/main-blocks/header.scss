@@ -11,10 +11,15 @@
     @include flex(row, nowrap, space-between, center);
   }
 
-  .header-button {
+  @media screen and (min-width: var(--min-s-size)) and (max-width: var(--max-s-size)) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__button {
     background-color: inherit;
 
-    color: #252525;
+    color: var(--black);
     text-align: center;
     font-family: var(--semiBold-font), serif;
     font-size: 25px;
@@ -24,19 +29,19 @@
   }
 
   & h1 {
-    color: #252525;
+    color: var(--black);
     text-align: center;
     font-family: var(--semiBold-font), sans-serif;
-    font-size: 125px;
+    font-size: 12.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
 
     & span {
-      color: #252525;
+      color: var(--black);
       font-family: var(--main-font), serif;
-      font-size: 125px;
+      font-size: 12.5rem;
       font-style: normal;
       font-weight: 300;
       line-height: normal;
@@ -83,5 +88,11 @@
       font-weight: 300;
       line-height: normal;
     }
+  }
+}
+
+@include respond-to('small') {
+  .logo__text, .logo__text--bold, .logo__text--rights {
+    display: none;
   }
 }
