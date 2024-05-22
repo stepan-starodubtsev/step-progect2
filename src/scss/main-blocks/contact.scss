@@ -8,7 +8,7 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 40px;
 
-  @media  screen and (max-width:1200px) and (min-width:768px) {
+  @media screen and (max-width: 1200px) and (min-width: 768px) {
     max-width: 931px;
     max-height: 725px;
     flex-direction: column;
@@ -18,7 +18,7 @@
     justify-content: center;
   }
 
-  @media screen and (max-width:767px) and (min-width:320px) {
+  @media screen and (max-width: 767px) and (min-width: 320px) {
     flex-direction: column;
     max-height: 671px;
     justify-content: center;
@@ -27,29 +27,21 @@
   &__label {
     max-width: 800px;
     font-family: var(--main-font);
-    font-size: 155px;
+    font-size: 15.5rem;
     font-weight: 300;
     line-height: 178.71px;
     text-align: left;
     color: rgba(37, 37, 37, 1);
 
-    @media screen and (max-width:1200px) and (min-width:768px) {
-      font-size: 150px;
-      line-height: 172.95px;
+    @media screen and (max-width: 1200px) and (min-width: 768px) {
+      align-self: center;
       text-align: center;
-      margin: 15px 0 40px;
     }
 
-    @media screen and (max-width:767px) and (min-width:320px) {
-      display: flex;
-      font-size: 80px;
-      line-height: 92.24px;
-      margin-bottom: 30px;
-      margin-right: 0;
-      margin-left: 0;
-      justify-content: center;
+    @media screen and (max-width: 767px) and (min-width: 320px) {
+      align-self: center;
+      text-align: center;
     }
-
   }
 
   &__text-wrapper {
@@ -59,34 +51,21 @@
     @include flex(column, nowrap, center, start);
     margin-bottom: 100px;
 
-    @media screen and (max-width:1200px) and (min-width:768px) {
-      align-items: center;
-      justify-content: center;
-      max-width: 100%;
-      height: 432px;
-    }
-
-    @media screen and (max-width:767px) and (min-width:320px) {
-      align-items: center;
-      max-width: 100%;
-      height: 469px;
-    }
-
     &__label {
       font-family: var(--bold-font), serif;
       font-size: 64px;
-      line-height: 75px;
+      line-height: normal;
       text-align: left;
       color: rgba(37, 37, 37, 1);
       margin-top: 0;
 
-      @media screen and (max-width:1200px) and (min-width:768px) {
+      @media screen and (max-width: 1200px) and (min-width: 768px) {
         max-width: 750px;
         text-align: center;
         margin-bottom: 0;
       }
 
-      @media screen and (max-width:767px) and (min-width:320px) {
+      @media screen and (max-width: 767px) and (min-width: 320px) {
         max-width: 438px;
         font-size: 40px;
         text-align: center;
@@ -103,16 +82,49 @@
       margin-top: 30px;
       margin-bottom: 30px;
 
-      @media screen and (max-width:1200px) and (min-width:768px) {
+      @media screen and (max-width: 1200px) and (min-width: 768px) {
         text-align: center;
       }
 
-      @media screen and (max-width:767px) and (min-width:320px) {
-        font-size: 20px;
-        max-width: 350px;
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        font-size: 30px;
+        //max-width: 350px;
         text-align: center;
-        margin: 0;
+        //margin: 0;
       }
     }
+
+    & button{
+      @media screen and (min-width: 320px) and (max-width: 768px) {
+        align-self: stretch;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1200px) {
+        align-self: center;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
   }
 }
