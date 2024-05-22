@@ -4,15 +4,3 @@
   justify-content: $j-content;
   align-items: $a-items;
 }
-
-$breakpoints: (
-        'small': 320px,
-        'medium': 768px,
-        'large': 1200px,
-);
-
-@mixin respond-between($min-width, $max-width) {
-  @media screen and (min-width: $min-width) and (max-width: $max-width) {
-    @content;
-  }
-}
