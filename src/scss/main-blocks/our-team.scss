@@ -3,12 +3,34 @@
 .our-team {
   padding-top: 50px;
   padding-bottom: 50px;
+
+  @include flex(column, nowrap, normal, normal);
+  gap: 50px;
+
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
+    padding-top: 30px;
+    gap: 30px;
+  }
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 40px;
+
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 30px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 3fr) 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+  }
 }
 
 .card-member {
@@ -27,12 +49,11 @@
       background-size: contain;
       width: 314px;
       height: auto;
+
+      @media screen and (min-width: 320px) and (max-width: 768px) {
+        width: 100%;
+      }
     }
-  }
-
-  &__footer {
-
-
   }
 }
 
@@ -75,9 +96,9 @@
   &__slogan {
     color: #333;
     font-family: var(--bold-font), serif;
-    font-size: 54px;
+    font-size: 8rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
   }
@@ -93,9 +114,25 @@
     line-height: normal;
     text-transform: capitalize;
 
-    & img{
+    & img {
       margin-left: 10px;
     }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    @include flex(column, nowrap, center, center);
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @include flex(column, nowrap, center, start);
+    text-align: start;
   }
 }
 

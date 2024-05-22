@@ -4,3 +4,32 @@
   justify-content: $j-content;
   align-items: $a-items;
 }
+
+//// Define breakpoints
+//$breakpoints: (
+//        'small': 320px,
+//        'medium': 768px,
+//        'large': 1200px
+//);
+//
+//// Define the mixin
+//@mixin respond-to($breakpoint, $max-breakpoint: null) {
+//  $min-width: map-get($breakpoints, $breakpoint);
+//  $max-width: if($max-breakpoint, map-get($breakpoints, $max-breakpoint), null);
+//
+//  @if $min-width and $max-width {
+//    @media (min-width: $min-width) and (max-width: $max-width) {
+//      @content;
+//    }
+//  } @else if $min-width {
+//    @media (min-width: $min-width) {
+//      @content;
+//    }
+//  } @else if $max-width {
+//    @media (max-width: $max-width) {
+//      @content;
+//    }
+//  } @else {
+//    @warn "No valid breakpoints provided.";
+//  }
+//}
