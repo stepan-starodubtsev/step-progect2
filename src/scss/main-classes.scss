@@ -65,6 +65,7 @@ body {
   }
 }
 
+
 .cards-wrapper {
   @include flex(row, wrap, normal, normal);
 
@@ -77,12 +78,20 @@ h2 {
   color: var(--black);
   text-align: center;
   font-family: var(--main-font), serif;
-  font-size: 150px;
+  font-size: 15rem;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   letter-spacing: 8.48px;
   text-transform: uppercase;
+
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    font-size: 15rem;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    font-size: 11rem;
+  }
 }
 
 .media-icons {
