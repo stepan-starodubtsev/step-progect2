@@ -2,15 +2,6 @@
 
 .service {
   @include flex(row, wrap, normal, stretch);
-  //width: 100%;
-
-  //@media screen and (max-width:1200px) and (min-width:768px) {
-  //  flex-direction: column;
-  //}
-  //
-  //@media screen and (min-width: 320px) and (max-width: 767px) {
-  //  flex-direction: column;
-  //}
 
   &__image {
     width: 46%;
@@ -19,10 +10,12 @@
 
     @media screen and (max-width: 1200px) and (min-width: 768px) {
       height: 991px;
+      width: 100%;
     }
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
       height: 478px;
+      width: 100%;
     }
   }
 }
@@ -30,15 +23,16 @@
 .article {
   @include flex(column, nowrap, normal, normal);
   padding: 70px 70px 70px 90px;
+
   @media screen and (max-width: 1200px) and (min-width: 768px) {
     width: 100%;
 
-    padding: 40px 30px 40px 30px;
+    padding: 0 40px;
   }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
 
-    padding: 20px 20px 20px 20px;
+    padding: 0 20px;
   }
 
   &__label {
@@ -52,7 +46,9 @@
     padding-top: 70px;
 
     @media screen and (max-width: 1200px) and (min-width: 768px) {
-      margin: 0 auto;
+      font-size: 70px;
+      text-align: center;
+      margin: 0 40px;
     }
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
