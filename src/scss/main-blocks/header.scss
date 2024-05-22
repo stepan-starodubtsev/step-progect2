@@ -48,7 +48,7 @@
     text-align: center;
   }
 
-  @include respond-to('small') {
+  @include respond-between('small', 'medium') {
     padding-top: 20px;
     padding-bottom: 20px;
   }
@@ -91,7 +91,7 @@
   }
 }
 
-@include respond-to('small') {
+@include respond-between('small', 'medium') {
   .logo__text, .logo__text--bold, .logo__text--rights {
     display: none;
   }

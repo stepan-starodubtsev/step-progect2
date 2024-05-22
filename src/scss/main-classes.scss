@@ -3,11 +3,11 @@
 html {
   font-size: 10px;
 
-  @include respond-to('medium') {
+  @include respond-between('medium', 'large') {
     font-size: 8px;
   }
 
-  @include respond-to('small') {
+  @include respond-between('small', 'medium') {
     font-size: 5px;
   }
 }
@@ -20,14 +20,16 @@ body {
   padding-left: 70px;
   padding-right: 70px;
 
-  @include respond-to('small') {
+  @include respond-between('medium', 'large') {
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  @include respond-to('small') {
+  @include respond-between('small', 'medium') {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  @media screen and (min-width: 320px) and (max-width: 768px) {
   }
 }
 

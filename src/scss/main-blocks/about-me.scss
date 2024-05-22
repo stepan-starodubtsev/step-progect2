@@ -6,8 +6,8 @@
 }
 
 .main-photo {
-  width: 1920px;
-  height: 956px;
+  max-width: 100%;
+  height: auto;
 }
 
 .about-me {
@@ -33,6 +33,14 @@
       font-weight: 800;
       line-height: normal;
     }
+
+    @include respond-between('medium', 'large') {
+      margin: 0 30px;
+    }
+
+    @include respond-between('small', 'medium') {
+      margin: 0 20px;
+    }
   }
 
   .media-wrapper {
@@ -54,6 +62,14 @@
       line-height: 32px;
       text-transform: uppercase;
     }
+  }
+
+  @include respond-between('medium', 'large') {
+    padding: 30px 0;
+  }
+
+  @include respond-between('small', 'medium') {
+    padding: 20px 0;
   }
 }
 
