@@ -7,15 +7,10 @@
   @include flex(column, wrap, normal, center);
   gap: 50px;
 
-  @media screen and (max-width: 1200px) and (min-width: 768px) {
-    padding-bottom: 0;
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
+    gap: 30px;
     padding-top: 30px;
-  }
-
-  @media screen and (max-width: 767px) and (min-width: 320px) {
-
-    padding-bottom: 0px;
-    margin-bottom: 0;
+    padding-bottom: 30px;
   }
 }
 
@@ -30,9 +25,7 @@
     height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-left: 30px;
+    margin-bottom: 40px;
   }
 
   @media screen and (max-width: 767px) and (min-width: 320px) {
@@ -40,9 +33,7 @@
     height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-left: 30px;
+    margin-bottom: 40px;
   }
 }
 
@@ -55,14 +46,14 @@
   padding: 30px 30px 60px;
   border: 1px solid black;
 
-  @media screen and (max-width: 1200px) and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
     max-width: 100%;
-    height: auto;
+    padding: 30px 30px 80px;
   }
 
-  @media screen and (max-width: 767px) and (min-width: 320px) {
+  @media screen and (min-width: 320px) and (max-width: 768px) {
     max-width: 100%;
-    height: auto;
+    padding: 30px 30px 180px;
   }
 
   &__logo {
