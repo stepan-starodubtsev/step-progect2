@@ -1,11 +1,11 @@
 import gulp from "gulp";
-
 import imagemin from "gulp-imagemin";
 import autoprefixer from "gulp-autoprefixer";
 import csso from "gulp-csso";
 import clean from "gulp-clean";
 import * as dartSass from 'sass';
-import gulpSass from "gulp-sass"
+import gulpSass from "gulp-sass";
+import ghPages from "gulp-gh-pages";
 const sass = gulpSass(dartSass);
 
 const { src, dest, watch, series, parallel } = gulp;
@@ -59,10 +59,16 @@ const browserSyncTaskHandler = () => {
   );
 };
 
+const deployTaskHandler = () => {
+  return src('./dist/**/*')
+      .pipe(ghPages());
+};
+
 export const cleaning = cleanDistTaskHandler;
 export const html = htmlTaskHandler;
 export const css = cssTaskHandler;
 export const images = imagesTaskHandler;
+export const deploy = deployTaskHandler;
 
 export const build = series(
     cleanDistTaskHandler,
